@@ -1,26 +1,20 @@
 {
-  "name": "Photo",
-  "base": "PersistedModel",
+  "name": "Account",
+  "base": "User",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "name": {
-      "type": "string"
-    },
-    "url": {
-      "type": "string"
-    },
-    "path": {
+    "nick_name": {
       "type": "string"
     }
   },
   "validations": [],
   "relations": {
-    "account": {
-      "type": "belongsTo",
-      "model": "Account",
+    "photos": {
+      "type": "hasMany",
+      "model": "Photo",
       "foreignKey": ""
     }
   },
