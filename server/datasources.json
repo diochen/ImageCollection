@@ -9,5 +9,12 @@
     "provider": "filesystem",
     "root": "./uploads",
     "maxFileSize": "52428800"
-  }
+  },
+  "awss3": {
+   "name": "awss3",
+   "connector": "loopback-component-storage",
+   "provider": "amazon",
+   "key": "D75Pe6V32KpNLNmnJfLIV9HIh/r4JskqO6PKs471",
+   "keyId": "AKIAIDBUGTXKBVH7WMPQ"
+ }
 }

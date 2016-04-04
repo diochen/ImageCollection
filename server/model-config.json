@@ -41,7 +41,7 @@
     "public": true
   },
   "FileContainer": {
-    "dataSource": "storage",
+    "dataSource": "awss3",
     "public": true
   }
 }
