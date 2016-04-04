@@ -28,9 +28,6 @@ module.exports = function(app) {
 
       token = token.toJSON();
 
-      console.log("@_@ === : ");
-      console.log(token);
-
       res.render('photos', {
         //nickname: token.user.nickname,
         username: "Ghost",

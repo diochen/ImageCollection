@@ -3,8 +3,8 @@ module.exports = function(app) {
 	var Photo = app.models.Photo;
 
   Account.create([
-    {nickname: 'Dio', email: 'dio@gmail.com', password: '1234'},
-    {nickname: 'Ruby', email: 'ruby@gmail.com', password: '1234'}
+    {nick_name: 'Dio', email: 'dio@gmail.com', password: '1234', album_id: 'album00'},
+    {nick_name: 'Ruby', email: 'ruby@gmail.com', password: '1234', album_id: 'album01'}
   ], function(err, accounts) {
     if (err) throw err;
 

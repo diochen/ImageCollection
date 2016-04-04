@@ -5,16 +5,29 @@
     <title>LoopBack example access control</title>
   </head>
   <body>
+<!--     <h1>Startkicker<% if (typeof username !== 'undefined') { %> - Welcome <%=
+      username %><% } %></h1>
+    <form action="/api/FileContainers/album00/upload" enctype="multipart/form-data" method="post"><br>
+    Type (or select) Filename: <input type="file" name="uploadFile">
+    <input type="submit" value="Upload File">
+    </form> -->
+
     <h1>Startkicker<% if (typeof username !== 'undefined') { %> - Welcome <%=
       username %><% } %></h1>
     <form action="/api/photos/upload<% if (typeof accessToken !==
+            'undefined') { %>?access_token=<%= accessToken %><% } %>" enctype="multipart/form-data" method="post"><br>
+    Type (or select) Filename: <input type="file" name="uploadFile">
+    <input type="submit" value="Upload File">
+    </form>
+
+<!--     <form action="/api/Containers/album00/upload<% if (typeof accessToken !==
       'undefined') { %>?access_token=<%= accessToken %><% } %>"
       method="post">
-      <label for="amount">Withdraw</h2>
+      <label for="file">Withdraw</h2>
       <input type="hidden" name="id" value="1">
       <input type="text" name="amount" value="100">
       <input type="submit" value="Submit">
-    </form>
+    </form> -->
 
 
 <!--     <table border=1 cellpadding=5>
@@ -89,6 +102,6 @@
     </table> -->
 
 
-    
+
   </body>
 </html>

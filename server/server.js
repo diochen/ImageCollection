@@ -37,3 +37,29 @@ app.set('json spaces', 2); // format json responses for easier viewing
 // must be set to serve views properly when starting the app via `slc run` from
 // the project root
 app.set('views', path.resolve(__dirname, 'views'));
+
+
+// Set current user
+app.use(loopback.context());
+app.use(loopback.token());
+app.use(function setCurrentUser(req, res, next) {
+  if (!req.accessToken) {
+    return next();
+  }
+  app.models.Account.findById(req.accessToken.userId, function(err, user) {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return next(new Error('No user with this access token was found.'));
+    }
+    var loopbackContext = loopback.getCurrentContext();
+    if (loopbackContext) {
+      loopbackContext.set('currentUser', user);
+    }
+    next();
+  });
+});
+
+
+

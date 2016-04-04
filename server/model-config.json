@@ -39,5 +39,9 @@
   "Account": {
     "dataSource": "db",
     "public": true
+  },
+  "FileContainer": {
+    "dataSource": "storage",
+    "public": true
   }
 }
