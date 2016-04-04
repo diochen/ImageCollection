@@ -13,6 +13,8 @@ module.exports = function(app) {
     // create photo 1 for Dio
     accounts[0].photos.create({
       name: 'fack photo for Dio',
+      containername:'fack_album01',
+      filename: 'fack_photo01',
       url: 'http://cdn.shopify.com/s/files/1/0876/2858/t/3/assets/hero.jpg?15004776536411677168'
     }, function(err, photo) {
       if (err) throw err;
@@ -22,6 +24,8 @@ module.exports = function(app) {
     //create photo 2 for Ruby
     accounts[1].photos.create({
       name: 'fack photo for Ruby',
+      containername:'fack_album02',
+      filename: 'fack_photo02',
       url: 'http://cdn10.snobessentials.com/sgmwp/wp-content/uploads/images2010/washing%20face.jpg'
     }, function(err, photo) {
       if (err) throw err;

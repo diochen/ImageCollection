@@ -1,5 +1,5 @@
 var loopback = require('loopback');
-
+var CONTAINERS_URL = '/api/FileContainers/'; // TODO(Dio), hack container api url
 module.exports = function(Photo) {
 
   Photo.upload = function(ctx, options, cb) {
@@ -16,24 +16,23 @@ module.exports = function(Photo) {
 	Photo.app.models.FileContainer.upload(ctx.req,ctx.result,options,function (err,fileObj) {
 		if(err) cb(err);
 		else{
-			cb(null,fileObj);
-		        // Here myFile is the field name associated with upload. You should change it to something else if you
-		        // var fileInfo = fileObj.files.myFile[0];
-		        // File.create({
-		        //   name: fileInfo.name,
-		        //   type: fileInfo.type,
-		        //   container: fileInfo.container,
-		        //   userId: ctx.req.accessToken.userId,
-		        //   url: CONTAINERS_URL+fileInfo.container+'/download/'+fileInfo.name // This is a hack for creating links
-		        // },function (err,obj) {
-		        //   if(err){
-		        //     console.log('Error in uploading' + err);
-		        //     cb(err);
-		        //   }
-		        //   else{
-		        //     cb(null,obj);
-		        //   }
-		        // });
+	        var fileInfo = fileObj.files.uploadFile[0];
+	        Photo.create({
+	          name: fileInfo.name,
+	          type: fileInfo.type,
+	          containername: fileInfo.container,
+	          filename: fileInfo.name,
+	          accountId: ctx.req.accessToken.userId,
+	          url: CONTAINERS_URL+fileInfo.container+'/download/'+fileInfo.name 
+	        },function (err,obj) {
+	          if(err){
+	            console.log('Error in uploading' + err);
+	            cb(err);
+	          }
+	          else{
+	            cb(null,obj);
+	          }
+	        });
 		}
 	});
   };
