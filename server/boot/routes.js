@@ -1,6 +1,8 @@
 var uuid = require('node-uuid');
 
 module.exports = function(app) {
+  return;
+  /*
   var router = app.loopback.Router();
 
   router.get('/', function(req, res) {
@@ -105,4 +107,5 @@ module.exports = function(app) {
   });
 
   app.use(router);
+  */
 };
