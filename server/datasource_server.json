@@ -1,0 +1,20 @@
+{
+  "mongodb": { 
+    "name": "mongodb",
+    "connector": "mongodb",
+    "host": "127.0.0.1", 
+    "database": "devDB", 
+    "username": "", 
+    "password": "", 
+    "port": 27017 
+  },
+  "mysql": { 
+    "name": "mysql",
+    "connector": "mysql",
+    "host": "127.0.0.1", 
+    "database": "devDB", 
+    "username": "devUser", 
+    "password": "devPassword", 
+    "port": 3306 
+  },	
+}

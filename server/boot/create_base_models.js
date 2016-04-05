@@ -2,8 +2,6 @@ module.exports = function(app) {
 	var Account = app.models.Account;
 	var Photo = app.models.Photo;
 
-  return;
-  
   Account.find({where: {email: 'dio@gmail.com'}, limit: 2}, 
     function(err, accounts) {
       if(!accounts || accounts.length <=0){

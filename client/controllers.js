@@ -141,6 +141,7 @@ angular.module('app', ['angularFileUpload'])
               console.log(resData);
               $scope.login_email = resData.data.email;
               $scope.login_password = '';
+              $scope.$broadcast('uploadCompleted', null);
               alert('Sign up success. Please login');
 
           }, function errorCallback(resError) {
