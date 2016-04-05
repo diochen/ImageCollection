@@ -16,7 +16,14 @@ module.exports = function(Photo) {
 	Photo.app.models.FileContainer.upload(ctx.req,ctx.result,options,function (err,fileObj) {
 		if(err) cb(err);
 		else{
-	        var fileInfo = fileObj.files.uploadFile[0];
+			console.log(fileObj);
+			var fileInfo = '';
+			if(fileObj.files.file){
+				fileInfo = fileObj.files.file[0];
+			}else if(fileObj.files.uploadFile){
+				fileInfo = fileObj.files.uploadFile[0];
+			}
+	        
 	        Photo.create({
 	          name: fileInfo.name,
 	          type: fileInfo.type,

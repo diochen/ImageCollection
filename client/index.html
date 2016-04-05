@@ -44,9 +44,17 @@
 
     <div class="navbar navbar-default">
         <div class="navbar-header">
-            <a class="navbar-brand"
+        <form ng-submit="loginSubmit()" >
+          Login Area:<br/>
+          <input type="text" ng-model="login_email" name="email" value="dio@gmail.com" placeholder="Email"><br/>
+          <input type="password" ng-model="login_password" name="password" value="1234" placeholder="Password"><br/>
+          <input type="submit" id="submit" value="Login" />
+          <input type="button" ng-click="logout()" id="logout" value="Logout" />
+          <input type="button" ng-click="signup()" id="signup" value="Sign Up" />
+        </form>
+<!--             <a class="navbar-brand"
                href="https://github.com/strongloop/loopback-component-storage">LoopBack
-                Storage Service</a>
+                Storage Service</a> -->
         </div>
     </div>
 
@@ -169,7 +177,7 @@
         </div>
 
         <div class="col-md-9" style="margin-bottom: 40px"
-             ng-controller="FilesController" data-ng-init="load()">
+             id="idFilesController" ng-controller="FilesController" data-ng-init="load()">
 
             <h3>Files in the container</h3>
 
@@ -178,8 +186,9 @@
                 <tbody>
                 <tr ng-repeat="file in files">
                     <td>
-                        <a href="/api/containers/container1/download/{{file.name}}"><strong>{{
-                            file.name }}</strong></a></td>
+                        <a href="{{file.url}}"><strong>{{
+                            file.name }}</strong></a>
+                    </td>
                     <td>
                     <td>
                         <button type="button" class="btn btn-danger btn-xs"
