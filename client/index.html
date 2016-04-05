@@ -5,6 +5,8 @@
     <title>LoopBack Storage Service Demo</title>
     <link rel="stylesheet"
           href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.css"/>
 
     <!-- Fix for old browsers -->
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
@@ -15,6 +17,8 @@
     <script src="http://code.angularjs.org/1.4.4/angular.min.js"></script>
     <script src="angular-file-upload.min.js"></script>
     <script src="controllers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.js"></script>
+    <script src="lightbox.js"></script>
 
     <style>
         .my-drop-zone {
@@ -186,7 +190,7 @@
                 <tbody>
                 <tr ng-repeat="file in files">
                     <td>
-                        <a href="{{file.url}}"><strong>{{
+                        <a href="{{file.url}}" data-toggle="lightbox"><strong>{{
                             file.name }}</strong></a>
                     </td>
                     <td>
