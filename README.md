@@ -10,11 +10,14 @@ Install Command
 - > npm install
 - > slc run (or node .)
 - Web server listening at: http://0.0.0.0:3000  and  Browse your REST API at http://0.0.0.0:3000/explorer
+- You can use default login or sign up new account
 
 Note
 ----
+- Default use S3 storage to save file.
+- Default create two test users. Account/Password are (dio@gmail.com / 1234) and (ruby@gmail.com / 1234)
 - Default use memory db because Cloudant connector often connect fail.
-- Switch to branch solution_cloudant_db if want test
+- Switch to branch "solution_cloudant_db" if want test
 
 Reference
 ----
