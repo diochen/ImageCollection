@@ -3,6 +3,37 @@
     "name": "db",
     "connector": "memory"
   },
+  "cloudantDB": {
+    "name": "cloudantDB",
+    "connector": "cloudant",
+    "username": "diomoto",
+    "password": "dio13425",
+    "database": "photo_collection_db"
+  },
+  "sqlite3DB": {
+    "name": "sqlite3DB",
+    "connector": "sqlite3",
+    "file": "photo_collection_db.sqlite3",
+    "debug": true
+  },
+  "mongodb": { 
+    "name": "mongodb",
+    "connector": "mongodb",
+    "host": "127.0.0.1", 
+    "database": "devDB", 
+    "username": "devUser", 
+    "password": "devPassword", 
+    "port": 27017 
+  },
+  "mysql": { 
+    "name": "mysql",
+    "connector": "mysql",
+    "host": "127.0.0.1", 
+    "database": "devDB", 
+    "username": "devUser", 
+    "password": "devPassword", 
+    "port": 3306 
+  },
   "storage": {
     "name": "storage",
     "connector": "loopback-component-storage",
@@ -16,5 +47,5 @@
    "provider": "amazon",
    "key": "D75Pe6V32KpNLNmnJfLIV9HIh/r4JskqO6PKs471",
    "keyId": "AKIAIDBUGTXKBVH7WMPQ"
- }
+  }
 }

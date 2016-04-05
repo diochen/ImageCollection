@@ -107,7 +107,7 @@ angular.module('app', ['angularFileUpload'])
               alert('User (' + $scope.login_email + ') success login');
 
           }, function errorCallback(resError) {
-            alert(resError); 
+            alert('Login fail : ' + resError); 
           });
          
       }; // login submit function
@@ -122,7 +122,7 @@ angular.module('app', ['angularFileUpload'])
                 $scope.$broadcast('uploadCompleted', null);
                 alert('User logout');
             }, function errorCallback(resError) {
-              alert(resError); 
+              alert('Logout fail : ' + resError); 
             });
         }
       }; // logout f

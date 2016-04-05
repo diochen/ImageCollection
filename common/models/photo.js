@@ -6,16 +6,18 @@ module.exports = function(Photo) {
   	// get current user
   	var lbCtx = loopback.getCurrentContext();
     var currentUser = lbCtx && lbCtx.get('currentUser');
-    console.log('User' + currentUser.nick_name + '('+ currentUser.email +') upload file');
     if(!currentUser || !currentUser.album_id)
-    	return cb(err);
+    	return cb('Cannot find current user');
+    console.log('User ('+ currentUser.email +') upload file');
 
  	if(!options) options = {};
     ctx.req.params.container = currentUser.album_id; // TODO(Dio), important : indicate which container 
 
 	Photo.app.models.FileContainer.upload(ctx.req,ctx.result,options,function (err,fileObj) {
-		if(err) cb(err);
-		else{
+		if(err){
+			console.log(err);
+			cb(err);
+		}else{
 			console.log(fileObj);
 			var fileInfo = '';
 			if(fileObj.files.file){
