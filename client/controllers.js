@@ -127,7 +127,31 @@ angular.module('app', ['angularFileUpload'])
         }
       }; // logout f
       $scope.signup = function() {
-        console.log('signup');
+          if(!$scope.login_email || !$scope.login_password){
+            alert('Please input email and password');
+            return;
+          }
+          var formData = {
+          'email'       : $scope.login_email,
+          'password'    : $scope.login_password
+          };
+
+          $http.post('/api/Accounts', formData)
+          .then(function successCallback(resData) {
+              console.log(resData);
+              $scope.login_email = resData.data.email;
+              $scope.login_password = '';
+              alert('Sign up success. Please login');
+
+          }, function errorCallback(resError) {
+            console.log(resError);
+            if(resError.status == 422){
+              alert('User ('+ $scope.login_email + ') already exists.');
+            }else{
+              alert('Create user fail.');
+            }
+             
+          });
       }; // signup f
 
 
