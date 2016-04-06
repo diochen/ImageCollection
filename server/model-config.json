@@ -14,30 +14,30 @@
     ]
   },
   "User": {
-    "dataSource": "cloudantDB"
+    "dataSource": "db"
   },
   "AccessToken": {
-    "dataSource": "cloudantDB",
+    "dataSource": "db",
     "public": false
   },
   "ACL": {
-    "dataSource": "cloudantDB",
+    "dataSource": "db",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "cloudantDB",
+    "dataSource": "db",
     "public": false
   },
   "Role": {
-    "dataSource": "cloudantDB",
+    "dataSource": "db",
     "public": false
   },
   "Photo": {
-    "dataSource": "cloudantDB",
+    "dataSource": "db",
     "public": true
   },
   "Account": {
-    "dataSource": "cloudantDB",
+    "dataSource": "db",
     "public": true
   },
   "FileContainer": {
